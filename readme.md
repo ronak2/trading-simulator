@@ -13,7 +13,7 @@ Nowadays, an unprecedented amount of people want to learn how to trade cryptocur
 **Goals:**
 1) Help people learn how to trade cryptocurrencies for free
 2) Provide cyrptocurrency information tailored to users' needs
-3) Collect user data
+3) Collect and aggregate user data
 
 
 <br>
