@@ -1,0 +1,22 @@
+<h1 style="color: tomato; font-size: 25px;" class="lead mb-3">Delete Account</h1>
+<%- include ("./partials/messages"); %>
+<a style="background-color: goldenrod" href="/dashboard" class="btn btn-primary btn-block">Back to Dashboard</a>
+<br>
+<br>
+<form action="/dashboard/deleteAccount" method="POST">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input style="background-color:rgba(243, 233, 221, 0.883)"
+        type="email"
+        id="email"
+        name="email"
+        class="form-control"
+        placeholder="Enter Email"
+      />
+    </div>
+      
+      <button style="background-color: tomato" type="submit" class="btn btn-primary btn-block">Confirm Deletion</button>
+</form>
+<br>
+<p class="lead mb-3">Click the button below if the page does not load after 5 seconds. </p>
+<a style="background-color: goldenrod" href="/" class="btn btn-primary btn-block">Exit</a>

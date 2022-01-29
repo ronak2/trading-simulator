@@ -1,0 +1,28 @@
+<h1 class="lead mb-3">Update Email</h1>
+<%- include ("./partials/messages"); %>
+<form action="/dashboard/updateAccount" method="POST">
+    <div class="form-group">
+      <label for="oldemail">Old Email</label>
+      <input style="background-color:rgba(243, 233, 221, 0.883)"
+        type="oldemail"
+        id="oldemail"
+        name="oldemail"
+        class="form-control"
+        placeholder="Enter Old Email"
+      />
+    </div>
+    <div class="form-group">
+        <label for="newemail">New Email</label>
+        <input style="background-color:rgba(243, 233, 221, 0.883)"
+          type="newemail"
+          id="newemail"
+          name="newemail"
+          class="form-control"
+          placeholder="Enter New Email"
+        />
+      </div>
+      <br>
+      <button style="background-color: goldenrod" type="submit" class="btn btn-primary btn-block">Confirm</button>
+</form>
+<p class="lead mb-3">Click the button below if the page does not load after 5 seconds. </p>
+<a style="background-color: goldenrod" href="/dashboard" class="btn btn-primary btn-block">Back to Dashboard</a>

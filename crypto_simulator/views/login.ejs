@@ -1,0 +1,37 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 style="padding-right: 2%" class="text-center mb-3"><i class="fas fa-sign-in-alt" style="color: goldenrod; padding-right: 2%;"></i>  Sign in</h1>
+        <%- include ("./partials/messages"); %>
+        <form action="/users/login" method="POST">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input style="background-color:rgba(243, 233, 221, 0.883)"
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Enter Email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input style="background-color:rgba(243, 233, 221, 0.883)"
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Enter Password"
+            />
+          </div>
+          <br>
+          <button style="background-color: goldenrod" type="submit" class="btn btn-primary btn-block">Sign In</button>
+        </form>
+        <p style="font-size: 16px" class="lead mt-4">
+          No Account? <a style="font-size:14px; color: goldenrod; padding-left: 1%" href="/users/register">Register</a>
+          <br>
+          Forgot Password? <a style="font-size:14px; color: goldenrod; padding-left: 1%" href="/users/register">Reset Password</a>
+        </p>
+      </div>
+    </div>
+  </div>

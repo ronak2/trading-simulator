@@ -1,0 +1,85 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3" style="padding-right: 2%">
+          <i class="fas fa-coins" style="color: goldenrod; padding-right: 2%;"></i>  Register
+        </h1>
+        <%- include ("./partials/messages"); %>
+        <form action="/users/register" method="POST">
+          <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input style="background-color:rgba(243, 233, 221, 0.883)"
+              type="name"
+              id="first_name"
+              name="first_name"
+              class="form-control"
+              placeholder="First Name"
+              value="<%= typeof first_name != 'undefined' ? first_name : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="middle_name">Middle Name</label>
+            <input style="background-color:rgba(243, 233, 221, 0.883)"
+              type="middle_name"
+              id="middle_name"
+              name="middle_name"
+              class="form-control"
+              placeholder="Middle Name"
+              value="<%= typeof middle_name != 'undefined' ? middle_name : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input style="background-color:rgba(243, 233, 221, 0.883)"
+              type="last_name"
+              id="last_name"
+              name="last_name"
+              class="form-control"
+              placeholder="Last Name"
+              value="<%= typeof last_name != 'undefined' ? last_name : '' %>"
+            />
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input style="background-color:rgba(243, 233, 221, 0.883)"
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Enter Email"
+              value="<%= typeof email != 'undefined' ? email : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input style="background-color:rgba(243, 233, 221, 0.883)"
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Create Password"
+              value="<%= typeof password != 'undefined' ? password : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password2">Confirm Password</label>
+            <input style="background-color:rgba(243, 233, 221, 0.883)"
+              type="password"
+              id="password2"
+              name="password2"
+              class="form-control"
+              placeholder="Confirm Password"
+              value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+            />
+          </div>
+        <br>
+          <button type="submit" style="background-color: goldenrod" class="btn btn-primary btn-block">
+            Register
+          </button>
+        </form>
+        <br>
+        <p styleclass="lead mt-4">Already Registered?  <a style="color: goldenrod; padding-left: 1%" href="/users/login">  Sign In</a></p>
+      </div>
+    </div>
+  </div>

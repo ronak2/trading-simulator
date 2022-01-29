@@ -1,0 +1,116 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div style="background-color: goldenrod;" class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="/dashboard">Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">Sign Out</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard/updateAccount">Update Email</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: indianred;" href="/dashboard/deleteAccount">Delete Account</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<h1 class="mt-4" style="color: goldenrod;"> <%- userInfo.fname %>'s Dashboard</h1>
+<br>
+<p class="lead mb-3" style="color: rgb(112, 136, 187);">Current price of Bitcoin:<span style="color: greenyellow;"> <%- btcp %> </span> </p>
+<p class="lead mb-3" style="color: rgb(112, 136, 187);">Current price of Ethereum:<span style="color: greenyellow;"> <%- ethp %> </span> </p>
+<p class="lead mb-3" style="color: rgb(112, 136, 187);">Current price of Solana:<span style="color: greenyellow;"> <%- solp %> </span> </p>
+<p class="lead mb-3" style="color: rgb(112, 136, 187);">Current price of Cardano:<span style="color: greenyellow;"> <%- adap %> </span> </p>
+<p class="lead mb-3" style="color: rgb(112, 136, 187);">Current price of Ripple:<span style="color: greenyellow;"> <%- xrpp %> </span> </p>
+<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked="" onclick="myFunction1()">
+  <label class="btn btn-outline-primary" for="btnradio1">Prices</label>
+  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked="" onclick="myFunction2()">
+  <label class="btn btn-outline-primary" for="btnradio2">Market Capitalizations</label>
+</div>
+<canvas id="bar-chart-horizontal" width="700" height="300"></canvas>
+<canvas id="bar-chart-horizontaltwo" width="700" height="300" style="display: none;"></canvas>
+<script>
+  new Chart(document.getElementById('bar-chart-horizontal'), {
+    type: 'horizontalBar',
+    data: {
+      labels: ["Bitcoin", "Ethereum", "Solana", "Cardano", "Ripple"],
+      datasets: [
+        {
+          label: "Market Capitalization ($usd)",
+          backgroundColor: ["goldenrod", "goldenrod","goldenrod","goldenrod","goldenrod"],
+          data: [`<%- btcm %>`,`<%- ethm %>`,`<%- solm %>`,`<%- adam %>`,`<%- xrpm %>`]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Top Cryptocurrency Market Capitalizations'
+      }
+    }
+  });
+
+  new Chart(document.getElementById('bar-chart-horizontaltwo'), {
+    type: 'line',
+    data: {
+      labels: ["Bitcoin", "Ethereum", "Solana", "Cardano", "Ripple"],
+      datasets: [
+        {
+          label: "Market Capitalization ($usd)",
+          borderColor: "goldenrod",
+          backgroundColor: "olive",
+          data: [`<%- btcp %>`,`<%- ethp %>`,`<%- solp %>`,`<%- adap %>`,`<%- xrpp %>`]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Top Cryptocurrency Prices'
+      }
+    }
+  });
+  function myFunction1()
+  {
+    document.getElementById("bar-chart-horizontal").style.display = "none";
+    document.getElementById("bar-chart-horizontaltwo").style.display = "initial";
+    
+  }
+  function myFunction2()
+  {
+    document.getElementById("bar-chart-horizontaltwo").style.display = "none";
+    document.getElementById("bar-chart-horizontal").style.display = "initial";
+    
+  }
+</script>
+<br>
+<br>
+
+
