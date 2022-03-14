@@ -25,6 +25,7 @@ Nowadays, an unprecedented amount of people want to learn how to trade cryptocur
 - #### CoinGecko API
 - #### Heroku
 - #### Passport.js
+- #### EJS
 - #### Jest Testing Framework
 
 <br>
